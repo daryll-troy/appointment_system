@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #0ef53c;
+  font-size: 100px
+}
+
+
+.main-panel {
+  background: linear-gradient(45deg, #EA1350, #4C519F);
+  width: 100%;
+  height: 100vh;
+}
+
+.main-panel .circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  top: 150px;
+  overflow: hidden;
+}
+
+.main-panel .circles div{
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 50px;
+    left: 10%;
+    top: 20%;
+    background: linear-gradient(45deg, #C31C5C,#DF4D86, #DDDAFF );
+    filter: blur(3px);
+    /* bottom: 90px; */
+    animation: animate 25s linear infinite;
+}
+
+@keyframes animate {
+  0%{
+    border-radius: 50%;
+    transform: translateY(0) rotate(0deg);
+    /* background: linear-gradient(45deg, #4C519F,#EA1350); */
+  }
+  
+  100%{
+    border-radius: 50%;
+    transform: translateY(0) rotate(760deg);
+    /* background: linear-gradient(45deg, #EA1350,#4C519F); */
+  }
+}
+
+.main-panel .circles div:nth-child(1){
+  left: 25%;
+  top: 5%;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(45deg, #38366F ,#54519D , #DDDAFF  );
+}
+
+.main-panel .circles div:nth-child(2){
+  left: 60%;
+  top: 5%;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(45deg, #9A296A ,#7268CC , #DDDAFF  );
+}
+
+.main-panel .circles div:nth-child(3){
+  left: 85%;
+  top: 0%;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(45deg, #9D2A65 ,#B855C1  );
+}
+
+.main-panel .circles div:nth-child(4){
+  left: 40%;
+  top: 20%;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(45deg, #C31C5C,#DF4D86, #DDDAFF );
+}
+
+.main-panel .circles div:nth-child(5){
+  left: 5%;
+  top: 30%;
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(45deg, #9D2A65 ,#B855C1 );
+}
+
+.main-panel .circles div:nth-child(6){
+  left: 80%;
+  top: 35%;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(45deg, #C31C5C,#DF4D86, #DDDAFF );
+}
+
+.main-panel .circles div:nth-child(7){
+  left: 25%;
+  top: 50%;
+  width: 220px;
+  height: 220px;
+  background: linear-gradient(45deg, #aa154e ,#E14A85, #DDDAFF );
+  /* box-shadow: -10px -5px 5px rgba(35, 35, 35,.25); */
+}
+
+.main-panel .circles div:nth-child(7){
+  left: 80%;
+  top: 50%;
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(45deg, #38366F ,#6562b7   );
+  /* box-shadow: -10px -5px 5px rgba(35, 35, 35,.25); */
+}
+
+.main-panel .circles div:nth-child(8){
+  left: 25%;
+  top: 60%;
+  width: 180px;
+  height: 180px;
+  background: linear-gradient(45deg, #DF4D86 ,#B855C1 );
+}
+
+.main-panel .circles div:nth-child(9){
+  left: 60%;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(45deg, #38366F ,#54519D , #DDDAFF  );
+}
+
+.main-panel .circles div:nth-child(10){
+  left: 65%;
+  top: 70%;
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(45deg, #38366F ,#54519D , #DDDAFF  );
+}

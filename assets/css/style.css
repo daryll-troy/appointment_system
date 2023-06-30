@@ -1,0 +1,454 @@
+
+* {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  scroll-behavior: smooth;
+}
+
+a {
+  /* color: #82cbed; */
+  text-decoration: none;
+}
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+.hero {
+  z-index: 2;
+  min-height: 100vh;
+  /* background: url("../img/gradients.svg") top center; */
+  background-size: cover;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.hero #left-panel {
+  background: #fff;
+  z-index: 30;
+  position: relative;
+}
+.hero #left-panel .left-content {
+  padding: 0% 10%;
+}
+.hero #left-panel .left-content h2 {
+  z-index: 30;
+  position: relative;
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #5B4A97;
+  font-family: "Raleway", sans-serif;
+}
+.hero #left-panel .left-content .gradient-line {
+  width: 100%;
+  height: 0.5em;
+  background: linear-gradient(45deg, #F7053F, #4C519F);
+  margin: 6em 0em 6em 0em;
+}
+.hero #left-panel .left-content p {
+  font-family: "Nunito Sans", sans-serif;
+}
+.hero #right-panel {
+  background: linear-gradient(30deg, #F7053F, #4C519F);
+  height: 100vh;
+  z-index: 30;
+  position: relative;
+  margin: 0;
+}
+.hero #right-panel .top-of-gradients {
+  padding-top : 10%;
+  padding-bottom: 2%;
+}
+.hero #right-panel .top-of-gradients h2 {
+  z-index: 30;
+  position: relative;
+  font-size: 2.5rem;
+  font-weight: 700;
+  /* line-height: 1.2; */
+  color: #fff;
+  font-family: "Raleway", sans-serif;
+}
+.hero #right-panel .main-panel {
+  width: 100%;
+  height: 100vh;
+}
+.hero #right-panel .main-panel .circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  top: 150px;
+  overflow: hidden;
+}
+.hero #right-panel .main-panel .circles div {
+  position: absolute;
+  display: block;
+  width: 3em;
+  height: 3em;
+  left: 10%;
+  top: 20%;
+  background: linear-gradient(45deg, #C31C5C, #DF4D86, #DDDAFF);
+  filter: blur(1px);
+  /* bottom: 90px; */
+  animation: animate 25s linear infinite;
+}
+.hero #right-panel .main-panel .circles div:nth-child(1) {
+  left: 25%;
+  top: 5%;
+  width: 3em;
+  height: 3em;
+  background: linear-gradient(45deg, #38366F, #54519D, #DDDAFF);
+  animation: animate2 25s linear infinite;
+}
+.hero #right-panel .main-panel .circles div:nth-child(2) {
+  left: 60%;
+  top: 5%;
+  width: 10em;
+  height: 10em;
+  background: linear-gradient(45deg, #9A296A, #7268CC, #DDDAFF);
+  animation: animate2 25s linear infinite;
+}
+.hero #right-panel .main-panel .circles div:nth-child(3) {
+  left: 85%;
+  top: 0%;
+  width: 6em;
+  height: 6em;
+  background: linear-gradient(45deg, #9D2A65, #B855C1);
+}
+.hero #right-panel .main-panel .circles div:nth-child(4) {
+  left: 40%;
+  top: 20%;
+  width: 5.5em;
+  height: 5.5em;
+  background: linear-gradient(45deg, #C31C5C, #DF4D86, #DDDAFF);
+  animation: animate2 25s linear infinite;
+}
+.hero #right-panel .main-panel .circles div:nth-child(5) {
+  left: 5%;
+  top: 30%;
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(45deg, #9D2A65, #B855C1);
+}
+.hero #right-panel .main-panel .circles div:nth-child(6) {
+  left: 80%;
+  top: 35%;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(45deg, #C31C5C, #DF4D86, #DDDAFF);
+  animation: animate2 25s linear infinite;
+}
+.hero #right-panel .main-panel .circles div:nth-child(7) {
+  left: 80%;
+  top: 50%;
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(45deg, #38366F, #6562b7);
+  /* box-shadow: -10px -5px 5px rgba(35, 35, 35,.25); */
+}
+.hero #right-panel .main-panel .circles div:nth-child(8) {
+  left: 25%;
+  top: 60%;
+  width: 180px;
+  height: 180px;
+  background: linear-gradient(45deg, #DF4D86, #B855C1);
+}
+.hero #right-panel .main-panel .circles div:nth-child(9) {
+  left: 60%;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(45deg, #38366F, #54519D, #DDDAFF);
+}
+.hero #right-panel .main-panel .circles div:nth-child(10) {
+  left: 65%;
+  top: 70%;
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(45deg, #38366F, #54519D, #DDDAFF);
+  animation: animate2 25s linear infinite;
+}
+
+.right-form-panel {
+  height: 100%;
+}
+
+.right-form-container {
+  margin: 0 auto;
+  padding: 3em;
+  width: 75%;
+  position: relative;
+  z-index:30;
+  align-content: space-between;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.125) 100%);
+  backdrop-filter: blur(37.5px);
+  border-radius: 15px;
+  transform: translateY(-30%);
+}
+
+.inputGroup {
+  font-family: 'Segoe UI', sans-serif;
+  /* margin: 1em 0 1em 0; */
+  position: relative;
+  z-index: 30;
+}
+
+.inputGroup input {
+  z-index: 30;
+  font-size: 100%;
+  padding: 0.8em;
+  outline: none;
+  border: 2px solid rgb(200, 200, 200);
+  border-radius: 10px;
+  width: 100%;
+  background-color: transparent;
+  /* align-content: space-evenly; */
+  color: #FFFFFF;
+  
+}
+
+.inputGroup label{
+  font-size: 100%;
+  position: absolute;
+  left: 0;
+  padding: 0.8em;
+  margin-left: 0.5em;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  color: #FFFFFF;
+}
+
+.inputGroup :is(input:focus, input:valid)~label {
+  padding:0;
+  transform: translateY(-50%) scale(.9);
+  margin-left: 2.2em;
+  background-color: transparent;
+  background: linear-gradient(190deg, rgba(0, 0, 0, 0.05) 100%, rgba(0, 0, 0, 0.125) 100%);
+  backdrop-filter:blur(20px);
+}
+
+.inputGroup :is(input:focus, input:valid) {
+  z-index: 30;
+  border-color: rgb(150, 150, 200);
+  background-color: transparent;
+}
+
+input[type=date]:required:invalid::-webkit-datetime-edit {
+  color: transparent;
+}
+input[type=date]:focus::-webkit-datetime-edit {
+  color: white !important;
+}
+
+input[type=time]:required:invalid::-webkit-datetime-edit {
+  color: transparent;
+}
+input[type=time]:focus::-webkit-datetime-edit {
+  color: black !important;
+}
+
+.selectBox label{
+  color: white;
+  background-color: transparent;
+}
+
+.selectBox select{
+  font-size: 100%;
+  position: absolute;
+  left: 0;
+  padding: 0.8em;
+  margin-left: 0.5em;
+  width: 100%;
+  color:white;
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+.selectBox option {
+  font-size: 100%;
+  padding: 0.8em;
+  color:black
+}
+
+.submitBtn {
+  position: relative;
+  z-index: 30;
+  background: #4C519F;
+  border-radius: 6.50958px;
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15.623px;
+  line-height: 18px;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height:44px;
+  color: #FFFFFF;
+}
+
+@keyframes animate {
+  0% {
+    border-radius: 50%;
+    transform: translateY(0) rotate(0deg);
+    /* background: linear-gradient(45deg, #4C519F,#EA1350); */
+  }
+  100% {
+    border-radius: 50%;
+    transform: translateY(0) rotate(760deg);
+    /* background: linear-gradient(45deg, #EA1350,#4C519F); */
+  }
+}
+@keyframes animate2 {
+  0% {
+    border-radius: 50%;
+    transform: translateY(0) rotate(0deg);
+    /* background: linear-gradient(45deg, #4C519F,#EA1350); */
+  }
+  100% {
+    border-radius: 50%;
+    transform: translateY(0) rotate(-760deg);
+    /* background: linear-gradient(45deg, #EA1350,#4C519F); */
+  }
+}
+@media (min-width: 100px) and (max-width: 365px) {
+  .hero #left-panel {
+    height: 50%;
+  }
+  .hero #left-panel .left-content {
+    margin: 10% 0% 10% 0%;
+    padding: 0% 5%;
+  }
+  .hero #left-panel .left-content h2 {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  .hero #left-panel .left-content .gradient-line {
+    margin: 3em 0em 3em 0em;
+  }
+  .hero #left-panel .left-content p {
+    font-size: 1rem;
+  }
+  .hero #right-panel .top-of-gradients h2 {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  .hero #right-panel .main-panel .circles div:nth-child(3) {
+    display: none;
+  }
+  .hero #right-panel .main-panel .circles div:nth-child(4) {
+    display: none;
+  }
+  .hero #right-panel .main-panel .circles div:nth-child(5) {
+    width: 12em;
+    height: 12em;
+  }
+  .hero #right-panel .main-panel .circles div:nth-child(8) {
+    width: 7em;
+    height: 7em;
+    background: linear-gradient(45deg, #DF4D86, #B855C1);
+  }
+  .hero #right-panel .main-panel .circles div:nth-child(9) {
+    display: none;
+  }
+  .hero #right-panel .main-panel .circles div:nth-child(10) {
+    display: none;
+  }
+  .right-form-container {
+    transform: translateY(0);
+  }
+}
+@media (min-width: 366px) and (max-width: 576px) {
+  .hero #left-panel {
+    height: 50%;
+  }
+  .hero #left-panel .left-content {
+    margin: 10% 0% 10% 0%;
+    padding: 0% 5%;
+  }
+  .hero #left-panel .left-content h2 {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  .hero #left-panel .left-content .gradient-line {
+    margin: 3em 0em 3em 0em;
+  }
+  .hero #left-panel .left-content p {
+    font-size: 1rem;
+  }
+  .hero #right-panel .top-of-gradients h2 {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  .hero #right-panel .main-panel .circles div:nth-child(3) {
+    left: 85%;
+    top: 0%;
+    width: 4em;
+    height: 4em;
+  }
+  .hero #right-panel .main-panel .circles div:nth-child(4) {
+    display: none;
+  }
+  .hero #right-panel .main-panel .circles div:nth-child(5) {
+    left: 5%;
+    top: 30%;
+    width: 12em;
+    height: 12em;
+  }
+  .hero #right-panel .main-panel .circles div:nth-child(10) {
+    display: none;
+  }
+  .right-form-container {
+    transform: translateY(0);
+  }
+}
+@media (min-width: 577px) {
+  .hero #left-panel {
+    height: 50%;
+  }
+  .hero #left-panel .left-content {
+    margin: 5% 0% 5% 0%;
+    padding: 0% 5%;
+  }
+  .hero #left-panel .left-content .gradient-line {
+    margin: 2em 0em 2em 0em;
+  }
+}
+
+@media (max-width: 1199px) {
+  .right-form-container {
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero #left-panel {
+    height: 100vh;
+  }
+  .hero #left-panel .left-content {
+    margin-top: 50%;
+  }
+  .hero #left-panel .left-content .gradient-line {
+    margin: 5em 0em 5em 0em;
+  }
+
+  .hero #right-panel .top-of-gradients h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    padding-left: 10%;
+  }
+  .right-form-container {
+    transform: translateY(0);
+  }
+}
+
+
+
+
