@@ -88,18 +88,67 @@ if (
     $sql = "
         INSERT INTO contact_information(contact_no, full_name, company_organization) VALUES (?, ?, ?)
     ";
-    try{
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param('sss', $contactNum, $name, $compOrg);
-    $stmt->execute();
-
-
-
-    }catch(Exception $stmt){
-        echo $stmt->getMessage();
+    try {
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param('sss', $contactNum, $name, $compOrg);
+        $stmt->execute();
+        store_preferrences($conn, $contactNum, $date, $time, $visitorsNum);
+    } catch (Exception $stmt) {
+        // echo $stmt->getMessage();
+        for_repeating_cellnumber($conn, $contactNum, $name, $compOrg);
     }
 }
 
+function store_preferrences($conn, $contactNum, $date, $time, $visitorsNum)
+{
+    $sql = "
+    SELECT id FROM contact_information WHERE contact_no = $contactNum
+    ";
+    $stmt = $conn->query($sql);
+    if ($stmt->num_rows > 0) {
+        $row = $stmt->fetch_assoc();
+        $id = $row['id'];
+    }
+
+    $sql = "
+        INSERT INTO preferrences(preferred_time, preferred_date, number_of_visitors, contact_information_id)
+        VALUES(?,?,?,?)
+    ";
+
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('ssii', $time, $date, $visitorsNum, $id);
+    $stmt->execute();
+}
+
+function for_repeating_cellnumber($conn, $contactNum, $name, $compOrg)
+{
+    $sql = "
+        SELECT full_name, company_organization FROM contact_information WHERE contact_no = $contactNum
+    ";
+    $stmt = $conn->query($sql);
+    if ($stmt->num_rows > 0) {
+        $row = $stmt->fetch_assoc();
+        echo $row['company_organization'];
+
+        if ($row['full_name'] != $name || $row['company_organization'] != $compOrg) {
+            $sql = "
+            INSERT INTO contact_information_dump(contact_no, full_name, company_organization) VALUES (?, ?, ?)
+            ";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param('sss', $contactNum, $row['full_name'], $row['company_organization']);
+            $stmt->execute();
+            
+
+
+            $sql = "
+                UPDATE contact_information SET full_name = ?, company_organization = ? WHERE contact_no = ?
+            ";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param('sss', $name,  $compOrg, $contactNum);
+            $stmt->execute();
+        }
+    }
+}
 ?>
 <?php
 $conn->close();

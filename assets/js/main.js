@@ -109,16 +109,16 @@ $('#submitBtn').click(function () {
           }
         }).done((res) => {
 
+          // res = JSON.parse(res)
+          console.log(res)
 
-          console.log(res.length);
 
-    
 
           if (res.length > 2) {
             Swal.fire(
-              'The name under this mobile number does not match any records',
-              'Please refer to another mobile number',
-              'error'
+              'Thank you for choosing our service! We look forward to seeing you again soon!',
+              'Our staff will contact you shortly to confirm your booking.',
+              'success'
             )
           } else {
             Swal.fire(
