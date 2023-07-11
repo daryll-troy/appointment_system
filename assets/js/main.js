@@ -109,7 +109,7 @@ $('#submitBtn').click(function () {
           }
         }).done((res) => {
 
-          // res = JSON.parse(res)
+        
           console.log(res)
 
 
